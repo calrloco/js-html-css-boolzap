@@ -10,7 +10,6 @@ html {
   font-size: 62.5%;
   font-family: "Open Sans", sans-serif;
 }
-
 /********base fine************/
 /********colors***************/
 :root {
@@ -64,7 +63,7 @@ html {
   --orange-rgb: 255, 173, 32;
   --pale-blue-green: #ecfaf5;
   --pale-blue-green-rgb: 236, 250, 245;
-  --gray-text-dark:#919191;
+  --gray-text-dark: #919191;
 }
 /********colors fine*********/
 /********container**********/
@@ -138,7 +137,7 @@ img {
 }
 .container-chat__main-left {
   display: flex;
-  flex: 0 0 20%;
+  flex: 0 279.188px;
   flex-direction: column;
 }
 .container-chat__main-left-notification {
@@ -185,9 +184,9 @@ img {
   cursor: pointer;
   font-size: 1.4rem;
   border-bottom: 1px solid #f2f2f2;
-  transition: all .2s;
+  transition: all 0.2s;
 }
-.container-chat__main-left-notification-link{
+.container-chat__main-left-notification-link {
   color: #919191;
 }
 
@@ -226,7 +225,7 @@ img {
   align-items: center;
   justify-content: space-around;
   background-color: var(--gray-60);
-  padding: .5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
 }
 .chat-input {
   flex: 0 0 90%;
@@ -258,14 +257,14 @@ img {
   height: 3rem;
   width: 100%;
 }
-input{
- border-radius: 18px;
+input {
+  border-radius: 18px;
 }
-.search{
+.search {
   padding-left: 4rem;
 }
 /*****chat content***************/
-.chat-input{
+.chat-input {
   padding-left: 1.2rem;
 }
 .container-chat__main-right-chat {
@@ -320,13 +319,12 @@ i {
   font-size: 1.1rem;
   color: var(--gray-text-dark);
 }
-.time-message{
-  
-  margin-top: .4rem;
+.time-message {
+  margin-top: 0.4rem;
 }
-.text-right{
+.text-right {
   text-align: right;
 }
-.text-left{
+.text-left {
   text-align: left;
 }
