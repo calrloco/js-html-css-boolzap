@@ -177,6 +177,8 @@ img{
   justify-content: space-between;
   padding: 1.5rem;
   cursor: pointer;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #f2f2f2;
 }
 .container-chat__main-left-contacts__item:hover{
   background-color:#ebebeb ;
@@ -186,6 +188,9 @@ img{
 }
 .contanct-item-name{
   font-weight: 700;
+}
+.contanct-item-preview{
+  color: #919191;
 }
 .contanct-item-left{
   display: flex;
@@ -255,6 +260,7 @@ input {
   display: flex;
   flex-direction: column;
   padding:2rem 8.7rem ;
+  font-size: 1.4rem;
 }
 .message-box{
   padding: 6px 7px 8px 9px;
@@ -262,6 +268,7 @@ input {
   background-color: #fff;
   position: relative;
   font-size: 1.4rem;
+  cursor: pointer;
 }
 .user-message{
   align-self: flex-end;
@@ -297,4 +304,7 @@ input {
 i{
   cursor: pointer;
   color: #919191;
+}
+.time{
+  font-size: 1.1rem;
 }
