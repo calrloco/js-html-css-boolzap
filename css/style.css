@@ -99,6 +99,7 @@ html {
   box-shadow: 0 1px 1px 0 rgba(var(--shadow-rgb), 0.06),
     0 2px 5px 0 rgba(var(--shadow-rgb), 0.2);
 }
+/********chat-box header************/
 .container-chat__header {
   display: flex;
   width: 100%;
@@ -118,6 +119,8 @@ html {
   margin-right: 1.8rem;
 
 }
+/********chat-box header fine************/
+/********common img************/
 .img{
   height: 3.5rem;
   border-radius: 50%;
@@ -126,10 +129,12 @@ html {
 img{
   cursor: pointer;
 }
+/********common img fine************/
+/********container chat************/
 .container-chat__main {
   display: flex;
   width: 100%;
-  background-color: pink;
+  background-color: var(--gray-30);
   height: 100%;
 }
 .container-chat__main-left {
@@ -167,6 +172,24 @@ img{
   background-color: #fff;
   overflow-y: scroll;
 }
+.container-chat__main-left-contacts__item{
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  cursor: pointer;
+}
+.container-chat__main-left-contacts__item:hover{
+  background-color:#ebebeb ;
+}
+.contanct-item-img{
+  padding-right: 1.5rem;
+}
+.contanct-item-name{
+  font-weight: 700;
+}
+.contanct-item-left{
+  display: flex;
+}
 .container-chat__main-left-search{
   position: relative;
 }
@@ -174,7 +197,7 @@ img{
   position: absolute;
   left: 10%;
 }
-
+/********container chat fine************/
 .container-chat__main-right {
   flex-direction: column;
   display: flex;
@@ -227,6 +250,49 @@ input {
   padding-left: 4rem;
   border-radius: 18px;
 }
+/*****chat content***************/
+.container-chat__main-right-chat{
+  display: flex;
+  flex-direction: column;
+  padding:2rem 8.7rem ;
+}
+.message-box{
+  padding: 6px 7px 8px 9px;
+  border-radius: .7rem;
+  background-color: #fff;
+  position: relative;
+  font-size: 1.4rem;
+}
+.user-message{
+  align-self: flex-end;
+  
+}
+.user-message::after{
+  content: '';
+  width: 2rem;
+  height: 1.4rem;
+  background-color: #fff;
+  position: absolute;
+  right: -1.5rem;
+  top: -.53rem;
+  clip-path: polygon(0 38%, 0% 100%, 100% 39%);
+}
+.contact-message::before{
+  content: '';
+  width: 2rem;
+  height: 1.4rem;
+  background-color: #dcf8c6;
+  position: absolute;
+  left: -1.5rem;
+  top: -.53rem;
+  transform: scaleX(-1);
+  clip-path: polygon( 100% 39%,0% 100%,0 38%);
+}
+.contact-message{
+  align-self: flex-start;
+  background-color: #dcf8c6;
+}
+/*****chat content fine***************/
 /********chat-box fine************/
 i{
   cursor: pointer;
