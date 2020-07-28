@@ -7,6 +7,7 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,400&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <title>Boolzapp</title>
@@ -17,18 +18,50 @@
       <div class="container-chat">
         <div class="container-chat__main">
           <div class="container-chat__main-left">
-            <div class="container-chat__header"></div>
-            <div class="container-chat__main-left-notification"></div>
+            <div class="container-chat__header">
+              <div class="user-profile-pic">
+                <img src="https://i.ibb.co/JCSbgXP/actor-adult-business-cards-547593.jpg" alt="" class="img user-img">
+              </div>
+              <div class="container-chat__header-btn">
+                <i class="container-chat__header-btn-icons far fa-comment-alt"></i>
+                <i class="container-chat__header-btn-icons fas fa-circle-notch"></i>
+                <i class="container-chat__header-btn-icons fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <div class="container-chat__main-left-notification">
+              <div class="container-chat__main-left-notification-mute">
+                <i class="far fa-bell-slash"></i>
+              </div>
+              <div class="container-chat__main-left-notification-text">
+                <p class="container-chat__main-left-notification-message">
+                  Ricevi notifiche di nuovi messaggi
+                </p>
+                <a href="" class="container-chat__main-left-notification-link">
+                  attiva notifiche Desktop
+                </a>
+              </div>
+              </div>
             <div class="container-chat__main-left-search">
-              <input type="text" class="search" />
+              <label for="search-contacts" class=" search-label"><i class="fa fa-search"></i></label>
+              <input type="text" id="search-contacts" class="search" placeholder="Search or start new chat">
             </div>
             <div class="container-chat__main-left-contacts"></div>
           </div>
           <div class="container-chat__main-right">
-            <div class="container-chat__header"></div>
+            <div class="container-chat__header heder-right">
+              <img src="https://i.ibb.co/JCSbgXP/actor-adult-business-cards-547593.jpg" alt="" class="img user-img">
+              <div class="container-chat__header-btn">
+                <i class="container-chat__header-btn-icons fas fa-search"></i>
+                <i class="container-chat__header-btn-icons fas fa-paperclip"></i>
+                <i class="container-chat__header-btn-icons fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+           
             <div class="container-chat__main-right-chat"></div>
             <div class="container-chat__main-right-chat-input">
-              <input type="text" class="chat-input" />
+               <i class="far fa-smile emojy-menu" ></i>
+              <input type="text" class="chat-input" placeholder="type a message">
+              <i class="fas fa-microphone emojy-menu"></i>
             </div>
           </div>
         </div>
