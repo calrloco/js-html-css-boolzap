@@ -1,170 +1,170 @@
 /**********base****************/
 *,
 *::before,
-*::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-html{
-    font-size: 62.5%;
-    font-family: 'Open Sans', sans-serif;
+html {
+  font-size: 62.5%;
+  font-family: "Open Sans", sans-serif;
 }
 /********base fine************/
 /********colors***************/
-:root{
-    --beige: #e5ddd5;
-    --beige-rgb: 229,221,213;
-    --black: #000;
-    --black-rgb: 0,0,0;
-    --blue: #039be5;
-    --blue-rgb: 3,155,229;
-    --blue-light: #00a5f4;
-    --blue-light-rgb: 0,165,244;
-    --blue-ocean: #aadaff;
-    --blue-ocean-rgb: 170,218,255;
-    --blue-sky: #9de1fe;
-    --blue-sky-rgb: 157,225,254;
-    --dark: #263238;
-    --dark-rgb: 38,50,56;
-    --gray-30: #f7f7f7;
-    --gray-30-rgb: 247,247,247;
-    --gray-60: #f0f0f0;
-    --gray-60-rgb: 240,240,240;
-    --gray-70: #ededed;
-    --gray-70-rgb: 237,237,237;
-    --gray-100: #e6e6e6;
-    --gray-100-rgb: 230,230,230;
-    --gray-150: #d9d9d9;
-    --gray-150-rgb: 217,217,217;
-    --gray-200: #ccc;
-    --gray-200-rgb: 204,204,204;
-    --gray-300: #b3b3b3;
-    --gray-300-rgb: 179,179,179;
-    --gray-400: #999;
-    --gray-400-rgb: 153,153,153;
-    --gray-500: grey;
-    --gray-500-rgb: 128,128,128;
-    --gray-600: #666;
-    --gray-600-rgb: 102,102,102;
-    --gray-700: #4a4a4a;
-    --gray-700-rgb: 74,74,74;
-    --gray-800: #303030;
-    --gray-800-rgb: 48,48,48;
-    --gray-850: #262626;
-    --gray-850-rgb: 38,38,38;
-    --gray-900: #1a1a1a;
-    --gray-900-rgb: 26,26,26;
-    --green: #07bc4c;
-    --green-rgb: 7,188,76;
-    --green-deep: #1b9a59;
-    --green-deep-rgb: 27,154,89;
-    --orange: #ffad20;
-    --orange-rgb: 255,173,32;
-    --pale-blue-green: #ecfaf5;
-    --pale-blue-green-rgb: 236,250,245;
+:root {
+  --beige: #e5ddd5;
+  --beige-rgb: 229, 221, 213;
+  --black: #000;
+  --black-rgb: 0, 0, 0;
+  --blue: #039be5;
+  --blue-rgb: 3, 155, 229;
+  --blue-light: #00a5f4;
+  --blue-light-rgb: 0, 165, 244;
+  --blue-ocean: #aadaff;
+  --blue-ocean-rgb: 170, 218, 255;
+  --blue-sky: #9de1fe;
+  --blue-sky-rgb: 157, 225, 254;
+  --dark: #263238;
+  --dark-rgb: 38, 50, 56;
+  --gray-30: #f7f7f7;
+  --gray-30-rgb: 247, 247, 247;
+  --gray-60: #f0f0f0;
+  --gray-60-rgb: 240, 240, 240;
+  --gray-70: #ededed;
+  --gray-70-rgb: 237, 237, 237;
+  --gray-100: #e6e6e6;
+  --gray-100-rgb: 230, 230, 230;
+  --gray-150: #d9d9d9;
+  --gray-150-rgb: 217, 217, 217;
+  --gray-200: #ccc;
+  --gray-200-rgb: 204, 204, 204;
+  --gray-300: #b3b3b3;
+  --gray-300-rgb: 179, 179, 179;
+  --gray-400: #999;
+  --gray-400-rgb: 153, 153, 153;
+  --gray-500: grey;
+  --gray-500-rgb: 128, 128, 128;
+  --gray-600: #666;
+  --gray-600-rgb: 102, 102, 102;
+  --gray-700: #4a4a4a;
+  --gray-700-rgb: 74, 74, 74;
+  --gray-800: #303030;
+  --gray-800-rgb: 48, 48, 48;
+  --gray-850: #262626;
+  --gray-850-rgb: 38, 38, 38;
+  --gray-900: #1a1a1a;
+  --gray-900-rgb: 26, 26, 26;
+  --green: #07bc4c;
+  --green-rgb: 7, 188, 76;
+  --green-deep: #1b9a59;
+  --green-deep-rgb: 27, 154, 89;
+  --orange: #ffad20;
+  --orange-rgb: 255, 173, 32;
+  --pale-blue-green: #ecfaf5;
+  --pale-blue-green-rgb: 236, 250, 245;
 }
 /********colors fine*********/
 /********container**********/
-.container-flex{
-    width: 100vw;
-    height: 100vh;
-    background-color: orangered;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: 10;
-    justify-content: center;
-    align-items: center;
+.container-flex {
+  width: 100vw;
+  height: 100vh;
+  background-color: orangered;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
 }
-.green-bar{
-    background-color: var(--green-deep);
-    height: 125px;
-    width: 100%;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
+.green-bar {
+  background-color: var(--green-deep);
+  height: 125px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
 }
 /********container fine***********/
 /********chat-box************/
-.container-chat{
-    display: flex;
-    flex-direction: column;
-    background-color: gray;
-    width: 1396px;
-    flex: 0 0 90%;
-    box-shadow:  0 1px 1px 0 rgba(var(--shadow-rgb),.06),0 2px 5px 0 rgba(var(--shadow-rgb),.2);
+.container-chat {
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+  width: 1396px;
+  flex: 0 0 90%;
+  box-shadow: 0 1px 1px 0 rgba(var(--shadow-rgb), 0.06),
+    0 2px 5px 0 rgba(var(--shadow-rgb), 0.2);
 }
-.container-chat__header{
-   display: flex;
-   width: 100%;
-   flex-basis: 6rem;
-   background-color: gray;
+.container-chat__header {
+  display: flex;
+  width: 100%;
+  flex-basis: 6rem;
+  background-color: gray;
 }
-.container-chat__main{
-    display: flex;
-    width: 100%;
-    background-color: pink;
-    height: 100%;
+.container-chat__main {
+  display: flex;
+  width: 100%;
+  background-color: pink;
+  height: 100%;
 }
-.container-chat__main-left{
-   display: flex;
-   flex: 0 0 20%;
-   flex-direction: column;
+.container-chat__main-left {
+  display: flex;
+  flex: 0 0 20%;
+  flex-direction: column;
 }
-.container-chat__main-left-notification{
-   flex: 0 0 6rem;
-   width: 100%;
-   background-color: var(--blue-sky);;
+.container-chat__main-left-notification {
+  flex: 0 0 6rem;
+  width: 100%;
+  background-color: var(--blue-sky);
 }
-.container-chat__main-left-contacts{
-    flex: 1 0;
-    background-color: gainsboro;
-    overflow-y: scroll;
+.container-chat__main-left-contacts {
+  flex: 1 0;
+  background-color: gainsboro;
+  overflow-y: scroll;
 }
-.container-chat__main-right{
-    background-color: goldenrod;
-    flex-direction: column;
-    display: flex;
-    flex: 30%;
-    width: 100%;
+.container-chat__main-right {
+  background-color: goldenrod;
+  flex-direction: column;
+  display: flex;
+  flex: 30%;
+  width: 100%;
 }
-.container-chat__main-right-chat-input{
-    flex: 0 0 6.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--beige);
+.container-chat__main-right-chat-input {
+  flex: 0 0 6.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--beige);
 }
-.chat-input{
-    flex: 0 0 90%;
-    outline: none;
-    border: none;
-    height: 4.2rem;
+.chat-input {
+  flex: 0 0 90%;
+  outline: none;
+  border: none;
+  height: 4.2rem;
 }
-.container-chat__main-right-chat{
+.container-chat__main-right-chat {
   overflow-y: scroll;
   background-color: hotpink;
   width: 100%;
   flex: 1;
 }
-.container-chat__main-left-search{
-    height: 4.9rem ;
-    display: flex;
-    
-    justify-content: center;
-    align-items: center;
-    padding: 3rem;
+.container-chat__main-left-search {
+  height: 4.9rem;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
 }
-.search{
-  
-    outline: none;
-    border: none;
-    height: 3rem;
+.search {
+  outline: none;
+  border: none;
+  height: 3rem;
 }
-input{
-    padding-left: 1.5rem;
-    border-radius: 18px;
+input {
+  padding-left: 1.5rem;
+  border-radius: 18px;
 }
 /********chat-box fine************/
