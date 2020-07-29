@@ -9,7 +9,7 @@ $(document).ready(function () {
       // faccio il trim della stringa e la uso come controllo per vedere se e vuota
       var controllo = messaggioUser.trim();
       var dt = new Date();
-      var time = dt.getHours() + ":" + dt.getMinutes()-10;
+      var time = dt.getHours() + ":" + dt.getMinutes();
       if (dt.getMinutes() < 10) {
         var time = dt.getHours() + ":" + 0 + dt.getMinutes();
       }
