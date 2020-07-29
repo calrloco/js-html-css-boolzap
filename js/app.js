@@ -61,7 +61,7 @@ $(document).ready(function () {
     messageContent.find(".time-message").addClass("text-left");
     $(".container-chat__main-right-chat").append(messageContent);
     $(".container-chat__header-right-info-text").text(
-      "Ultimo Accesso oggi" + time
+      "Ultimo Accesso oggi " + time
     );
   }
 });
