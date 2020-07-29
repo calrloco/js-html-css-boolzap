@@ -236,6 +236,44 @@ img {
   justify-content: space-around;
   background-color: var(--gray-60);
   padding: 0.5rem 1.5rem;
+  position: relative;
+}
+.emojy-menu-list{
+  display:none;
+  cursor: pointer;
+  position: absolute;
+  left: 12px;
+  top: -52px;
+  z-index: 200;
+  font-size: 2.5rem;
+  background-color: #fff;
+  padding: 1.2rem;
+  border-radius: 3rem;
+}
+
+.emojy-menu-list::before{
+  content: '';
+  width: 30px;
+  height: 20px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -21px;
+  left: 3rem;
+  clip-path: polygon(0 100%, 100% 100%, 100% 0);
+  transform: rotate(90deg) scaleX(-1);
+  
+}
+.emojy-active{
+  display: flex;
+}
+.emojy{
+  transition: all .2s;
+}
+.emojy:hover{
+  transform: scale(1.2);
+}
+.emojy:active{
+  transform: scale(1);
 }
 .chat-input {
   flex: 0 0 90%;
@@ -245,6 +283,17 @@ img {
 }
 .emojy-menu {
   font-size: 3rem;
+}
+.emojy-menu-clicked{
+  color:#25D366;
+}
+#send:hover{
+  transform: scale(1.1);
+
+}
+#send:active{
+  transform: scale(1);
+  
 }
 .container-chat__main-left-search {
   height: 4.9rem;

@@ -66,9 +66,20 @@ $(document).ready(function () {
   // funzione scroll automantico all'invio o ricezione di un messaggio
   function scrollBottom (){
     var container = $('.container-chat__main-right-chat');
-    container.animate({scrollTop:container.get(0).scrollHeight},200
-    );
+    container.animate({scrollTop:container.get(0).scrollHeight},200);
   }
+  /// funzione per aprire mnu emojy
+  $('.smile').click(function(){
+       $('.emojy-menu-list').toggleClass('emojy-active');
+       $(this).toggleClass('emojy-menu-clicked');
+  });
+  //// funzione per inserire emojy nel messaggio
+  $('.emojy').click(function(){
+    var messaggioUser = $("input.chat-input");
+    emojy = $(this).text();
+    console.log(emojy);
+    messaggioUser.val(messaggioUser.val()+emojy);
+  });
 });
 function numeroRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
