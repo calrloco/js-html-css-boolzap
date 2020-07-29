@@ -1,14 +1,15 @@
 $(document).ready(function () {
   $("input.chat-input").keydown(chatBot);
+  $('#send').click(chatBot);
   // /// chatbot
   function chatBot() {
-    if (event.which === 13 || event.keyCode === 13) {
+    if (event.which === 13 || event.keyCode === 13 || event.type ==='click') {
       var messaggioUser = $("input.chat-input").val();
       var lastSeen = $(".contanct-item-timing");
       // faccio il trim della stringa e la uso come controllo per vedere se e vuota
       var controllo = messaggioUser.trim();
       var dt = new Date();
-      var time = dt.getHours() + ":" + dt.getMinutes();
+      var time = dt.getHours() + ":" + dt.getMinutes()-10;
       if (dt.getMinutes() < 10) {
         var time = dt.getHours() + ":" + 0 + dt.getMinutes();
       }
