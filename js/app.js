@@ -26,9 +26,7 @@ $(document).ready(function () {
         console.log(messageContent);
         $(".container-chat__main-right-chat").append(messageContent);
         // mentre il messaggio viene scritto appare la scritta typing dove c'e l'accesso...
-        $(".container-chat__header-right-info-text").text(
-            'Typing...'
-          );
+        $(".container-chat__header-right-info-text").text('Typing...');
          // richiamo funzione di risposta con un tempo fra 1 secondo e 4 secondi
         setTimeout(randomAnswere, numeroRandom(2000, 4000));
         lastSeen.text(time);
