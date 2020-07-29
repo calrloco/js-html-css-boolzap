@@ -4,14 +4,21 @@ $(document).ready(function () {
   function chatBot() {
     if (event.which == 13 || event.keyCode == 13) {
       var messaggioUser = $("input.chat-input").val();
-      // faccio il trim della stringa e la uso come controllo per vedere se e vuota 
+      var lastSeen = $('.contanct-item-timing');
+      // faccio il trim della stringa e la uso come controllo per vedere se e vuota
       var controllo = messaggioUser.trim();
-    //   se la stringa non e vuota invia il messaggio
+      var dt = new Date();
+      var time = dt.getHours() + ":" + dt.getMinutes();
+      if (dt.getMinutes() < 10) {
+        var time = dt.getHours() + ":" + 0 + dt.getMinutes();
+      }
+      //   se la stringa non e vuota invia il messaggio
       if (controllo.length != 0) {
-        console.log(messaggioUser);
         var messageContent = $(".template .message-box").clone();
         $(".time time-message").addClass("text");
         messageContent.addClass("user-message");
+        messageContent.find(".time-message").text(time);
+        messageContent.find(".time-message").addClass("text-right");
         messageContent
           .find(".contact-message-text-content")
           .append(messaggioUser);
@@ -19,6 +26,8 @@ $(document).ready(function () {
         $(".container-chat__main-right-chat").append(messageContent);
         // richiamo funzione di risposta con un tempo fra 1 secondo e 4 secondi
         setTimeout(randomAnswere, numeroRandom(1000, 4000));
+        lastSeen.text(time);
+       
       }
     }
   }
@@ -34,11 +43,19 @@ $(document).ready(function () {
       "Sono mega triste fra :(",
       "non hai capito Giulia mi ha lasciato",
     ];
+    var dt = new Date();
+    var time = dt.getHours() + ":" + dt.getMinutes();
+    if (dt.getMinutes() < 10) {
+      var time = dt.getHours() + ":" + 0 + dt.getMinutes();
+    }
     var risposta = risposterandom[numeroRandom(0, risposterandom.length - 1)];
     var messageContent = $(".template .message-box").clone();
     messageContent.addClass("contact-message");
+    messageContent.find(".time-message").text(time);
     messageContent.find(".contact-message-text-content").append(risposta);
+    messageContent.find(".time-message").addClass("text-left");
     $(".container-chat__main-right-chat").append(messageContent);
+    $('.container-chat__header-right-info-text').text('Ultimo Accesso oggi'+time);
   }
 });
 function numeroRandom(min, max) {

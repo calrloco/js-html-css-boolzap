@@ -55,9 +55,9 @@
               </div>
             </div>
             <div class="container-chat__main-left-search">
-              <label for="search-contacts" class="search-label"
-                ><i class="fa fa-search"></i
-              ></label>
+              <label for="search-contacts" class="search-label">
+                <i class="fa fa-search"></i>
+              </label>
               <input
                 type="text"
                 id="search-contacts"
@@ -88,11 +88,19 @@
           </div>
           <div class="container-chat__main-right">
             <div class="container-chat__header heder-right">
-              <img
-                src="https://i.ibb.co/JCSbgXP/actor-adult-business-cards-547593.jpg"
-                alt=""
-                class="img user-img"
-              />
+              <div class="container-chat__header-right-info">
+                <img
+                  src="https://i.ibb.co/JKtW0B0/shallow-focus-photo-of-man-in-white-and-black-polka-dot-2269872.jpg"
+                  alt=""
+                  class="img contact-img"
+                />
+                <div class="container-chat__header-right-info-right">
+                  <p class="contanct-item-name">Giovanni</p>
+                  <p class="container-chat__header-right-info-text">
+                    Ultimo Accesso oggi 21.30
+                  </p>
+                </div>
+              </div>
               <div class="container-chat__header-btn">
                 <i class="container-chat__header-btn-icons fas fa-search"></i>
                 <i
@@ -104,27 +112,7 @@
               </div>
             </div>
 
-            <div class="container-chat__main-right-chat">
-              <!-- messaggio inviato 
-              <div class="user-message message-box">
-                <div class="user-message-text">
-                  <p class="user-message-text-content">Hello there</p>
-                </div>
-                <p class="time time-message text-right">19.20</p>
-              </div>
-               messaggio ricevuto 
-              <div class="contact-message message-box">
-                <div class="contact-message-text">
-                  <p class="contact-message-text-content">Hello there!
-                    how u doing mate?
-                  </p>
-                  <p class="time time-message text-left">19.20</p>
-                </div>
-              </div>
-                  messaggio ricevuto -->
-              <!-- messaggio template -->
-            </div>
-
+            <div class="container-chat__main-right-chat"></div>
             <div class="container-chat__main-right-chat-input">
               <i class="far fa-smile emojy-menu"></i>
               <input
@@ -132,7 +120,7 @@
                 class="chat-input"
                 placeholder="type a message"
               />
-              <i class="fas fa-microphone emojy-menu"></i>
+              <i class="fas fa-paper-plane emojy-menu" id="send"></i>
             </div>
           </div>
         </div>
@@ -142,7 +130,7 @@
       <div class="message-box">
         <div class="contact-message-text">
           <p class="contact-message-text-content"></p>
-          <p class="time time-message">19.20</p>
+          <p class="time time-message"></p>
         </div>
       </div>
     </div>

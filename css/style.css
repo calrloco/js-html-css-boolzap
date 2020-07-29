@@ -120,6 +120,14 @@ html {
 .container-chat__header-btn-icons:not(:last-child) {
   margin-right: 1.8rem;
 }
+.container-chat__header-right-info{
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+}
+.contact-img{
+  margin-right: 1.5rem;
+}
 /********chat-box header fine************/
 /********common img************/
 .img {
@@ -235,14 +243,6 @@ img {
   border: none;
   height: 4.2rem;
 }
-.container-chat__main-right-chat {
-  overflow-y: scroll;
-  background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
-  background-size: contain;
-  width: 100%;
-  flex: 1;
-}
-
 .emojy-menu {
   font-size: 3rem;
 }
@@ -271,6 +271,11 @@ input {
   padding-left: 1.2rem;
 }
 .container-chat__main-right-chat {
+  overflow-y: scroll;
+  background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+  background-size: contain;
+  width: 100%;
+  flex: 1 1 677.188px;;
   display: flex;
   flex-direction: column;
   padding: 2rem 8.7rem;
