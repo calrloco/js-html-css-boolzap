@@ -289,6 +289,7 @@ input {
   font-size: 1.4rem;
   cursor: pointer;
   margin-bottom:1.2rem;
+  min-width: 108.672px;
 }
 .template{
   display: none;

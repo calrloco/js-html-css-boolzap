@@ -1,10 +1,10 @@
 $(document).ready(function () {
   $("input.chat-input").keydown(chatBot);
-  /// chatbot
+  // /// chatbot
   function chatBot() {
-    if (event.which == 13 || event.keyCode == 13) {
+    if (event.which === 13 || event.keyCode === 13) {
       var messaggioUser = $("input.chat-input").val();
-      var lastSeen = $('.contanct-item-timing');
+      var lastSeen = $(".contanct-item-timing");
       // faccio il trim della stringa e la uso come controllo per vedere se e vuota
       var controllo = messaggioUser.trim();
       var dt = new Date();
@@ -27,7 +27,7 @@ $(document).ready(function () {
         // richiamo funzione di risposta con un tempo fra 1 secondo e 4 secondi
         setTimeout(randomAnswere, numeroRandom(1000, 4000));
         lastSeen.text(time);
-       
+        $("input.chat-input").val("");
       }
     }
   }
@@ -55,7 +55,9 @@ $(document).ready(function () {
     messageContent.find(".contact-message-text-content").append(risposta);
     messageContent.find(".time-message").addClass("text-left");
     $(".container-chat__main-right-chat").append(messageContent);
-    $('.container-chat__header-right-info-text').text('Ultimo Accesso oggi'+time);
+    $(".container-chat__header-right-info-text").text(
+      "Ultimo Accesso oggi" + time
+    );
   }
 });
 function numeroRandom(min, max) {
