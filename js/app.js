@@ -20,10 +20,7 @@ $(document).ready(function () {
         messageContent.addClass("user-message");
         messageContent.find(".time-message").text(time);
         messageContent.find(".time-message").addClass("text-right");
-        messageContent
-          .find(".contact-message-text-content")
-          .append(messaggioUser);
-        console.log(messageContent);
+        messageContent.find(".contact-message-text-content").append(messaggioUser);
         $(".container-chat__main-right-chat").append(messageContent);
         // mentre il messaggio viene scritto appare la scritta typing dove c'e l'accesso...
         $(".container-chat__header-right-info-text").text('typing...');
@@ -31,9 +28,11 @@ $(document).ready(function () {
         setTimeout(randomAnswere, numeroRandom(2000, 4000));
         lastSeen.text(time);
         $("input.chat-input").val("");
+        scrollBottom();
       }
     }
-  }
+  };
+
   // funzione rispostarandom
   function randomAnswere() {
     var risposterandom = [
@@ -60,6 +59,14 @@ $(document).ready(function () {
     $(".container-chat__main-right-chat").append(messageContent);
     $(".container-chat__header-right-info-text").text(
       "Ultimo Accesso oggi " + time
+      
+    );
+    scrollBottom();
+  }
+  // funzione scroll automantico all'invio o ricezione di un messaggio
+  function scrollBottom (){
+    var container = $('.container-chat__main-right-chat');
+    container.animate({scrollTop:container.get(0).scrollHeight},200
     );
   }
 });
