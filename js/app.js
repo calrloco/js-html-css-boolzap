@@ -1,9 +1,9 @@
 $(document).ready(function () {
   $("input.chat-input").keydown(chatBot);
-  $('#send').click(chatBot);
+  $("#send").click(chatBot);
   // /// chatbot
   function chatBot() {
-    if (event.which === 13 || event.keyCode === 13 || event.type ==='click') {
+    if (event.which === 13 || event.keyCode === 13 || event.type === "click") {
       var messaggioUser = $("input.chat-input").val();
       var lastSeen = $(".contanct-item-timing");
       // faccio il trim della stringa e la uso come controllo per vedere se e vuota
@@ -35,14 +35,14 @@ $(document).ready(function () {
   // funzione rispostarandom
   function randomAnswere() {
     var risposterandom = [
-      "ciao",
+      "Fra non posso rispondere ora",
       "Non ho il tuo numero ci conosciamo?",
       "Aspetta un minuto sono impegnato",
-      "Bella come va?",
+      "Riunione!!!",
       "Ho una riunione sentiamoci dopo",
-      "Hai visto Carol Baskin ha sottratto lo zoo a Joe exotic Lol",
-      "Sono mega triste fra :(",
-      "non hai capito Giulia mi ha lasciato",
+      "Hai visto Carol Baskin ha sottratto lo zoo a Joe exotic Lol, poi ti dico ora non posso parlare",
+      "Sono mega triste fra :(, ma ora non posso parlare sono in riunione",
+      "non hai capito Giulia mi ha lasciato, poi ti dico ora sto impicciato",
     ];
     var dt = new Date();
     var time = dt.getHours() + ":" + dt.getMinutes();
