@@ -10,6 +10,7 @@ html {
   font-size: 62.5%;
   font-family: "Open Sans", sans-serif;
 }
+
 /********base fine************/
 /********colors***************/
 :root {
@@ -78,6 +79,7 @@ html {
   z-index: 10;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
 }
 .green-bar {
   background-color: var(--green-deep);
@@ -212,7 +214,7 @@ img {
   position: absolute;
   left: 10%;
 }
-/********container chat fine************/
+
 .container-chat__main-right {
   flex-direction: column;
   display: flex;
@@ -263,6 +265,7 @@ input {
 .search {
   padding-left: 4rem;
 }
+/********container chat fine************/
 /*****chat content***************/
 .chat-input {
   padding-left: 1.2rem;
@@ -280,6 +283,10 @@ input {
   position: relative;
   font-size: 1.4rem;
   cursor: pointer;
+  margin-bottom:1.2rem;
+}
+.template{
+  display: none;
 }
 .user-message {
   align-self: flex-end;
