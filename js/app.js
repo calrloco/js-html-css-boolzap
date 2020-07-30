@@ -93,6 +93,9 @@ $(document).ready(function () {
       $('.active').removeClass('active');
       $(this).addClass('active');
       chatContainer.eq($(this).index()).addClass('active');
+      var changeImg = $(this).find('.contanct-item-pic').attr('src');
+      $('img.contact-img').attr('src',changeImg);
+       
     }
   );
 });

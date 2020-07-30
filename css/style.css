@@ -130,7 +130,7 @@ html {
 /********common img************/
 .img {
   height: 3.5rem;
-  border-radius: 50%;
+  clip-path: circle();
 }
 img {
   cursor: pointer;
