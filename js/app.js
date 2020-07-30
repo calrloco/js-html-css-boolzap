@@ -6,32 +6,38 @@ $(document).ready(function () {
   function chatBot() {
     var time = orario();
     var messaggioUser = $("input.chat-input").val();
-    var lastSeen = $('.container-chat__main-left-contacts__item.active').find(".contanct-item-timing");
+    var lastSeen = $(".container-chat__main-left-contacts__item.active").find(
+      ".contanct-item-timing"
+    );
     // faccio il trim della stringa e la uso come controllo per vedere se e vuota
     var controllo = messaggioUser.trim();
     if (event.which === 13 || event.keyCode === 13 || event.type === "click") {
-       //   se la stringa non e vuota invia il messaggio **/
+      //   se la stringa non e vuota invia il messaggio **/
       if (controllo.length != 0) {
         var messageContent = $(".template .message-box").clone();
         $(".time time-message").addClass("text");
         messageContent.addClass("user-message");
         messageContent.find(".time-message").text(time);
         messageContent.find(".time-message").addClass("text-right");
-        messageContent.find(".contact-message-text-content").append(messaggioUser);
+        messageContent
+          .find(".contact-message-text-content")
+          .append(messaggioUser);
         $(".container-chat__main-right-chat.active").append(messageContent);
         // mentre il messaggio viene scritto appare la scritta typing dove c'e l'accesso...
-        $(".container-chat__header-right-info-text").text('typing...');
-         // richiamo funzione di risposta con un tempo fra 1 secondo e 4 secondi
+        $(".container-chat__header-right-info-text").text("typing...");
+        // richiamo funzione di risposta con un tempo fra 1 secondo e 4 secondi
         setTimeout(randomAnswere, numeroRandom(2000, 4000));
         lastSeen.text(time);
         $("input.chat-input").val("");
         scrollBottom();
       }
     }
-  };
+  }
   //*****funzione rispostarandom*********/
   function randomAnswere() {
-    var lastSeen = $('.container-chat__main-left-contacts__item.active').find(".contanct-item-timing");
+    var lastSeen = $(".container-chat__main-left-contacts__item.active").find(
+      ".contanct-item-timing"
+    );
     /// array risposterandom///
     var risposterandom = [
       "Fra non posso rispondere ora",
@@ -52,57 +58,58 @@ $(document).ready(function () {
     messageContent.find(".contact-message-text-content").append(risposta);
     messageContent.find(".time-message").addClass("text-left");
     $(".container-chat__main-right-chat.active").append(messageContent);
-    $(".container-chat__header-right-info-text").text(
-      "Ultimo Accesso oggi " + time
-    );
+    $(".active-head-Info").text("Ultimo Accesso oggi " + time);
     lastSeen.text(time);
     scrollBottom();
   }
   //*** funzione scroll automantico all'invio o ricezione di un messaggio **/////////
-  function scrollBottom (){
-    var container = $('.container-chat__main-right-chat');
-    container.animate({scrollTop:container.get(0).scrollHeight},200);
+  function scrollBottom() {
+    var container = $(".container-chat__main-right-chat");
+    container.animate({ scrollTop: container.get(0).scrollHeight }, 200);
   }
   ///*** funzione per aprire menu emojy **///////
-  $('.smile').click(function(){
-       $('.emojy-menu-list').toggleClass('emojy-active');
-       $(this).toggleClass('emojy-menu-clicked');
+  $(".smile").click(function () {
+    $(".emojy-menu-list").toggleClass("emojy-active");
+    $(this).toggleClass("emojy-menu-clicked");
   });
   ////**** funzione per inserire emojy nel messaggio */////////
-  $('.emojy').click(function(){
+  $(".emojy").click(function () {
     var messaggioUser = $("input.chat-input");
     emojy = $(this).text();
-    messaggioUser.val(messaggioUser.val()+emojy);
+    messaggioUser.val(messaggioUser.val() + emojy);
   });
   ////**input ricerca degli contatti animazione quando focus **/////////////
-  $('.search').focus(function(){
-    $(this).addClass('search-focus');
-    $('.cerca').removeClass('fa-search');
-    $('.cerca').addClass('fa-arrow-left  search-focus-icon');
-    $('.container-chat__main-left-search').addClass('container-chat__main-right-chat-input-focus');
+  $(".search").focus(function () {
+    $(this).addClass("search-focus");
+    $(".cerca").removeClass("fa-search");
+    $(".cerca").addClass("fa-arrow-left  search-focus-icon");
+    $(".container-chat__main-left-search").addClass(
+      "container-chat__main-right-chat-input-focus"
+    );
   });
   ////** input ricerca degli utenti animazione quando esce dal focus **////////
-  $('.search').blur(function(){
-    $(this).removeClass('search-focus');
-    $('.cerca').addClass('fa-search');
-    $('.cerca').removeClass('fa-arrow-left  search-focus-icon');
-    $('.container-chat__main-left-search').removeClass('container-chat__main-right-chat-input-focus');
+  $(".search").blur(function () {
+    $(this).removeClass("search-focus");
+    $(".cerca").addClass("fa-search");
+    $(".cerca").removeClass("fa-arrow-left  search-focus-icon");
+    $(".container-chat__main-left-search").removeClass(
+      "container-chat__main-right-chat-input-focus"
+    );
   });
   ///funzione per Contatto e chat attiva ////
-  $('.container-chat__main-left-contacts__item').click(
-    function (){
-      var headername = $('.contanct-item-name-header');
-      var contactNameSide = $(this).find('.contanct-item-name').text();
-      var chatContainer = $('.container-chat__main-right-chat');
-      $('.active').removeClass('active');
-      $(this).addClass('active');
-      chatContainer.eq($(this).index()).addClass('active');
-      var changeImg = $(this).find('.contanct-item-pic').attr('src');
-      $('img.contact-img').attr('src',changeImg);
-      headername.text(contactNameSide);
-    }
-  );
-
+  $(".container-chat__main-left-contacts__item").click(function () {
+    var headername = $(".contanct-item-name-header");
+    var headerInfo = $(".container-chat__header-right-info-text");
+    var contactNameSide = $(this).find(".contanct-item-name").text();
+    var chatContainer = $(".container-chat__main-right-chat");
+    $(".active").removeClass("active");
+    $(this).addClass("active");
+    chatContainer.eq($(this).index()).addClass("active");
+    var changeImg = $(this).find(".contanct-item-pic").attr("src");
+    $("img.contact-img").attr("src", changeImg);
+    headername.text(contactNameSide);
+    headerInfo.addClass("active-head-Info");
+  });
 });
 /*******Vanilla Js functions ********/
 /// numero random
@@ -110,7 +117,7 @@ function numeroRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 //****funzione per avere l'ora *****/////
-function orario (){
+function orario() {
   var dt = new Date();
   var time = dt.getHours() + ":" + dt.getMinutes();
   /// se i minuti sono minori di 10 oggiungo uno zero per non avere orari tipo 12.9///
