@@ -222,14 +222,13 @@ img {
   position: absolute;
   left: 10%;
 }
-
 .container-chat__main-right {
   flex-direction: column;
   display: flex;
   flex: 30%;
   width: 100%;
 }
-.container-chat__main-right-chat-input {
+.container-chat__main-right-chat-input{
   flex: 0 0 6.2rem;
   display: flex;
   align-items: center;
@@ -237,6 +236,10 @@ img {
   background-color: var(--gray-60);
   padding: 0.5rem 1.5rem;
   position: relative;
+}
+.container-chat__main-right-chat-input-focus{
+  background-color: #fff;
+  border-bottom:1px solid var(--gray-60) ;
 }
 .emojy-menu-list{
   display:none;
@@ -307,6 +310,15 @@ img {
   border: none;
   height: 3rem;
   width: 100%;
+}
+.search-focus{
+  height: 5rem;
+  border-radius: 0;
+}
+.search-focus-icon{
+  color:var(--blue);
+  font-size:2rem;
+  font-size: 1.6rem;
 }
 input {
   border-radius: 18px;
@@ -389,4 +401,23 @@ i {
 }
 .text-left {
   text-align: left;
+}
+/*scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
