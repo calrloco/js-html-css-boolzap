@@ -100,7 +100,13 @@ $(document).ready(function () {
       headername.text(contactNameSide);
     }
   );
- 
+  $('#search-contacts').keyup(function(event){
+    var inputLetters = $(this).val();
+    console.log(inputLetters);
+    var itemArray = $('.contanct-item-name').filter();
+    console.log(itemArray);
+     
+  });
 });
 /*******Vanilla Js functions ********/
 /// numero random

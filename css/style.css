@@ -337,7 +337,7 @@ input {
   background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
   background-size: contain;
   width: 100%;
-  flex: 1 1;
+  flex: 1 1 calc(100vh - 220px);
   display: none;
   flex-direction: column;
   padding: 2rem 8.7rem;
