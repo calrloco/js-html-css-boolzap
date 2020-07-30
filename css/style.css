@@ -58,7 +58,7 @@ html {
   --gray-900-rgb: 26, 26, 26;
   --green: #07bc4c;
   --green-rgb: 7, 188, 76;
-  --green-deep: #1b9a59;
+  --green-deep: #009688;
   --green-deep-rgb: 27, 154, 89;
   --orange: #ffad20;
   --orange-rgb: 255, 173, 32;
@@ -77,8 +77,6 @@ html {
   flex-direction: column;
   position: relative;
   z-index: 10;
-  justify-content: center;
-  align-items: center;
   overflow-y: auto;
 }
 .green-bar {
@@ -97,9 +95,10 @@ html {
   flex-direction: column;
   background-color: gray;
   width: 1396px;
-  flex: 0 0 90%;
+  flex: 1 1;
   box-shadow: 0 1px 1px 0 rgba(var(--shadow-rgb), 0.06),
     0 2px 5px 0 rgba(var(--shadow-rgb), 0.2);
+    margin: 50px auto;
 }
 /********chat-box header************/
 .container-chat__header {
@@ -183,9 +182,11 @@ img {
   color: var(--blue-sky);
 }
 .container-chat__main-left-contacts {
-  flex: 1 0;
+  flex: 1 1 100%;
   background-color: #fff;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 }
 .container-chat__main-left-contacts__item {
   display: flex;
@@ -274,6 +275,7 @@ img {
 }
 .emojy:hover{
   transform: scale(1.2);
+  
 }
 .emojy:active{
   transform: scale(1);
@@ -288,15 +290,15 @@ img {
   font-size: 3rem;
 }
 .emojy-menu-clicked{
-  color:#25D366;
+  color: var(--green-deep);
 }
 #send:hover{
   transform: scale(1.1);
-
+  color: var(--blue-light);
 }
 #send:active{
   transform: scale(1);
-  
+  color: var(--blue-light);
 }
 .container-chat__main-left-search {
   height: 4.9rem;
@@ -312,7 +314,6 @@ img {
   width: 100%;
 }
 .search-focus{
-  height: 5rem;
   border-radius: 0;
 }
 .search-focus-icon{
@@ -336,7 +337,7 @@ input {
   background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
   background-size: contain;
   width: 100%;
-  flex: 1 1 677.188px;;
+  flex: 1 1 677.188px;
   display: flex;
   flex-direction: column;
   padding: 2rem 8.7rem;
@@ -358,6 +359,7 @@ input {
 .user-message {
   align-self: flex-end;
 }
+/*User message arrow*/
 .user-message::after {
   content: "";
   width: 2rem;
@@ -368,6 +370,7 @@ input {
   top: -0.53rem;
   clip-path: polygon(0 38%, 0% 100%, 100% 39%);
 }
+/*bot message arrow*/
 .contact-message::before {
   content: "";
   width: 2rem;
@@ -421,3 +424,5 @@ i {
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+
+

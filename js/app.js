@@ -31,6 +31,7 @@ $(document).ready(function () {
   };
   //*****funzione rispostarandom*********/
   function randomAnswere() {
+    /// array risposterandom///
     var risposterandom = [
       "Fra non posso rispondere ora",
       "Non ho il tuo numero ci conosciamo?",
@@ -42,6 +43,7 @@ $(document).ready(function () {
       "non hai capito Giulia mi ha lasciato &#128557;, poi ti dico ora sto impicciato",
     ];
     var time = orario();
+    // la risposta random presa con indice di nRandom ///
     var risposta = risposterandom[numeroRandom(0, risposterandom.length - 1)];
     var messageContent = $(".template .message-box").clone();
     messageContent.addClass("contact-message");
