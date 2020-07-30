@@ -76,7 +76,7 @@ html {
   flex-direction: column;
   position: relative;
   z-index: 10;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 .green-bar {
   background-color: var(--green-deep);

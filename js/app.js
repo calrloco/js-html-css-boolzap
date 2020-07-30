@@ -6,7 +6,7 @@ $(document).ready(function () {
   function chatBot() {
     var time = orario();
     var messaggioUser = $("input.chat-input").val();
-    var lastSeen = $(".contanct-item-timing");
+    var lastSeen = $('.container-chat__main-left-contacts__item.active').find(".contanct-item-timing");
     // faccio il trim della stringa e la uso come controllo per vedere se e vuota
     var controllo = messaggioUser.trim();
     if (event.which === 13 || event.keyCode === 13 || event.type === "click") {
@@ -31,6 +31,7 @@ $(document).ready(function () {
   };
   //*****funzione rispostarandom*********/
   function randomAnswere() {
+    var lastSeen = $('.container-chat__main-left-contacts__item.active').find(".contanct-item-timing");
     /// array risposterandom///
     var risposterandom = [
       "Fra non posso rispondere ora",
@@ -54,6 +55,7 @@ $(document).ready(function () {
     $(".container-chat__header-right-info-text").text(
       "Ultimo Accesso oggi " + time
     );
+    lastSeen.text(time);
     scrollBottom();
   }
   //*** funzione scroll automantico all'invio o ricezione di un messaggio **/////////
