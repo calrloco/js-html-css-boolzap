@@ -89,9 +89,10 @@ $(document).ready(function () {
   ///funzione per Contatto e chat attiva ////
   $('.container-chat__main-left-contacts__item').click(
     function (){
+      var chatContainer = $('.container-chat__main-right-chat');
       $('.active').removeClass('active');
       $(this).addClass('active');
-      $('.container-chat__main-right-chat').eq($(this).index()).addClass('active');
+      chatContainer.eq($(this).index()).addClass('active');
     }
   );
 });
