@@ -343,6 +343,7 @@ input {
   flex-direction: column;
   padding: 2rem 8.7rem;
   font-size: 1.4rem;
+  min-height: 60px;
 }
 .message-box {
   padding: 6px 7px 8px 9px;

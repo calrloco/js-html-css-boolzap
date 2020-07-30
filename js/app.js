@@ -18,7 +18,7 @@ $(document).ready(function () {
         messageContent.find(".time-message").text(time);
         messageContent.find(".time-message").addClass("text-right");
         messageContent.find(".contact-message-text-content").append(messaggioUser);
-        $(".container-chat__main-right-chat").append(messageContent);
+        $(".container-chat__main-right-chat.active").append(messageContent);
         // mentre il messaggio viene scritto appare la scritta typing dove c'e l'accesso...
         $(".container-chat__header-right-info-text").text('typing...');
          // richiamo funzione di risposta con un tempo fra 1 secondo e 4 secondi
@@ -50,7 +50,7 @@ $(document).ready(function () {
     messageContent.find(".time-message").text(time);
     messageContent.find(".contact-message-text-content").append(risposta);
     messageContent.find(".time-message").addClass("text-left");
-    $(".container-chat__main-right-chat").append(messageContent);
+    $(".container-chat__main-right-chat.active").append(messageContent);
     $(".container-chat__header-right-info-text").text(
       "Ultimo Accesso oggi " + time
     );
