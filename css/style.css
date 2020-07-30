@@ -10,7 +10,6 @@ html {
   font-size: 62.5%;
   font-family: "Open Sans", sans-serif;
 }
-
 /********base fine************/
 /********colors***************/
 :root {
@@ -104,7 +103,6 @@ html {
 .container-chat__header {
   display: flex;
   width: 100%;
-  flex-basis: 6rem;
   background-color: var(--gray-70);
   justify-content: space-between;
   align-items: center;
@@ -127,6 +125,7 @@ html {
 .contact-img{
   margin-right: 1.5rem;
 }
+
 /********chat-box header fine************/
 /********common img************/
 .img {
@@ -338,7 +337,7 @@ input {
   background-size: contain;
   width: 100%;
   flex: 1 1;
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: 2rem 8.7rem;
   font-size: 1.4rem;
@@ -385,6 +384,11 @@ input {
 .contact-message {
   align-self: flex-start;
   background-color: #dcf8c6;
+}
+/*active class*/
+.active{
+  display: flex;
+  background-color: rgb(235, 235, 235);
 }
 /*****chat content fine***************/
 /********chat-box fine************/

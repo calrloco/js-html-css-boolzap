@@ -87,9 +87,13 @@ $(document).ready(function () {
     $('.container-chat__main-left-search').removeClass('container-chat__main-right-chat-input-focus');
   });
   ///funzione per Contatto e chat attiva ////
-  function chatAttiva (){
-    
-  }
+  $('.container-chat__main-left-contacts__item').click(
+    function (){
+      $('.active').removeClass('active');
+      $(this).addClass('active');
+      $('.container-chat__main-right-chat').eq($(this).index()).addClass('active');
+    }
+  );
 });
 /*******Vanilla Js function ********/
 /// numero random
