@@ -86,6 +86,10 @@ $(document).ready(function () {
     $('.cerca').removeClass('fa-arrow-left  search-focus-icon');
     $('.container-chat__main-left-search').removeClass('container-chat__main-right-chat-input-focus');
   });
+  ///funzione per Contatto e chat attiva ////
+  function chatAttiva (){
+    
+  }
 });
 /*******Vanilla Js function ********/
 /// numero random
