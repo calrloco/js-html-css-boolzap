@@ -89,17 +89,20 @@ $(document).ready(function () {
   ///funzione per Contatto e chat attiva ////
   $('.container-chat__main-left-contacts__item').click(
     function (){
+      var headername = $('.contanct-item-name-header');
+      var contactNameSide = $(this).find('.contanct-item-name').text();
       var chatContainer = $('.container-chat__main-right-chat');
       $('.active').removeClass('active');
       $(this).addClass('active');
       chatContainer.eq($(this).index()).addClass('active');
       var changeImg = $(this).find('.contanct-item-pic').attr('src');
       $('img.contact-img').attr('src',changeImg);
-       
+      headername.text(contactNameSide);
     }
   );
+ 
 });
-/*******Vanilla Js function ********/
+/*******Vanilla Js functions ********/
 /// numero random
 function numeroRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
