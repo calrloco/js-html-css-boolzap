@@ -2,7 +2,7 @@ $(document).ready(function () {
   //****Richiamo fuzioni inzio app ****/
   $("input.chat-input").keydown(chatBot);
   $("#send").click(chatBot);
-  // barra ricerca
+  // barra ricerca 
   $("#search-contacts").keyup(function () {
     searchValue($(this).val().toLowerCase().trim());
   });
@@ -25,9 +25,7 @@ $(document).ready(function () {
         messageContent.addClass("user-message");
         messageContent.find(".time-message").text(time);
         messageContent.find(".time-message").addClass("text-right");
-        messageContent
-          .find(".contact-message-text-content")
-          .append(messaggioUser);
+        messageContent.find(".contact-message-text-content").append(messaggioUser);
         $(".container-chat__main-right-chat.active").append(messageContent);
         // mentre il messaggio viene scritto appare la scritta typing dove c'e l'accesso...
         $(".container-chat__header-right-info-text").text("typing...");
@@ -70,6 +68,19 @@ $(document).ready(function () {
     lastSeen.text(time);
     scrollBottom();
   }
+
+  function conversazioneDefault(){
+   $('.message-box.contact-message').first().remove();
+   var containerPrev =  $('.container-chat__main-left-contacts__item.active');
+   var oraPrev = containerPrev.find('.contanct-item-timing').text();
+   var messagePrev = containerPrev.find('.contanct-item-preview').text();
+   var messageContent = $('.template .message-box').clone();
+   messageContent.addClass('contact-message');
+   messageContent.find('.time').text(oraPrev);
+   messageContent.find(".contact-message-text-content").append(messagePrev);
+   messageContent.find(".time-message").addClass("text-left");
+   $(".container-chat__main-right-chat.active").prepend(messageContent);
+  }
   //*** funzione scroll automantico all'invio o ricezione di un messaggio **/////////
   function scrollBottom() {
     var container = $(".container-chat__main-right-chat.active");
@@ -105,7 +116,7 @@ $(document).ready(function () {
     );
   });
   // function search bar
-  function searchValue(val) {
+  function searchValue(val){
     var contact = $(".container-chat__main-left-contacts__item");
     var nome = contact.find(".contanct-item-name");
     $(nome).each(function () {
@@ -113,11 +124,11 @@ $(document).ready(function () {
       // se la stringa non include la partola nascondi caso contrario mostra
       if (!nomeUser.includes(val)) {
         $(this).closest(contact).hide();
-      } else {
+      }else{
         $(this).closest(contact).show();
       }
     });
-  }
+  };
   //funzione per Contatto e chat attiva ////
   $(".container-chat__main-left-contacts__item").click(function () {
     var headername = $(".contanct-item-name-header");
@@ -125,7 +136,7 @@ $(document).ready(function () {
     var contactNameSide = $(this).find(".contanct-item-name").text();
     var chatContainer = $(".container-chat__main-right-chat");
     randmTimeToHeader = $(".contanct-item-timing").eq($(this).index()).text();
-    headerInfo.text("Ultimo Accesso oggi " + randmTimeToHeader);
+    headerInfo.text("Ultimo Accesso oggi " + randmTimeToHeader)
     $(".active").removeClass("active");
     $(this).addClass("active");
     chatContainer.eq($(this).index()).addClass("active");
@@ -133,6 +144,7 @@ $(document).ready(function () {
     $("img.contact-img").attr("src", changeImg);
     headername.text(contactNameSide);
     headerInfo.addClass("active-head-Info");
+    conversazioneDefault();
   });
 
   //set random Time
@@ -150,22 +162,17 @@ $(document).ready(function () {
     }
   }
   // set RandomMessage
-  function RandomPreview() {
-    var containerPrev = $(".contanct-item-preview");
+  function RandomPreview(){
+    var containerPrev =  $('.contanct-item-preview');
     var randomPrev = [
-      "tutto ok",
-      "bene",
-      "a dopo",
-      "sicuro",
-      "non so",
-      "si",
-      "apposto",
+      'tutto ok',
+      'bene','a dopo',
+      'sicuro','non so',
+      'si','apposto',
     ];
-    for (var i = 0; i < containerPrev.length; i++) {
-      $(containerPrev[i]).text(
-        randomPrev[numeroRandom(0, randomPrev.length - 1)]
-      );
-    }
+    for(var i=0;i<containerPrev.length;i++){
+    $(containerPrev[i]).text(randomPrev[numeroRandom(0,randomPrev.length-1)]);
+  }
   }
 });
 ///********fine jquery*************/
