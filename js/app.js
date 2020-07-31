@@ -72,7 +72,6 @@ $(document).ready(function () {
   function conversazioneDefault(){
    $('.contact-message').first().remove();
    var containerPrev =  $('.container-chat__main-left-contacts__item.active');
-   //var oraPrev = containerPrev.find('.contanct-item-timing').text();
    var messagePrev = containerPrev.find('.contanct-item-preview').text();
    var messageContent = $('.template .message-box').clone();
    messageContent.addClass('contact-message');
