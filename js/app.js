@@ -70,13 +70,13 @@ $(document).ready(function () {
   }
 
   function conversazioneDefault(){
-   $('.message-box.contact-message').first().remove();
+   $('.contact-message').first().remove();
    var containerPrev =  $('.container-chat__main-left-contacts__item.active');
-   var oraPrev = containerPrev.find('.contanct-item-timing').text();
+   //var oraPrev = containerPrev.find('.contanct-item-timing').text();
    var messagePrev = containerPrev.find('.contanct-item-preview').text();
    var messageContent = $('.template .message-box').clone();
    messageContent.addClass('contact-message');
-   messageContent.find('.time').text(oraPrev);
+   messageContent.find('.time').text('today');
    messageContent.find(".contact-message-text-content").append(messagePrev);
    messageContent.find(".time-message").addClass("text-left");
    $(".container-chat__main-right-chat.active").prepend(messageContent);
