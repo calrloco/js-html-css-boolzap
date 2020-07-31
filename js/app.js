@@ -2,6 +2,10 @@ $(document).ready(function () {
   //****Richiamo fuzioni inzio app ****/
   $("input.chat-input").keydown(chatBot);
   $("#send").click(chatBot);
+  // ricerca contatto
+  $("#search-contacts").keyup(function () {
+    searchValue($(this).val().toLowerCase().trim());
+  });
   setRandomtime();
   //*********chatbot************//
   function chatBot() {
@@ -67,7 +71,7 @@ $(document).ready(function () {
   }
   //*** funzione scroll automantico all'invio o ricezione di un messaggio **/////////
   function scrollBottom() {
-    var container = $(".container-chat__main-right-chat");
+    var container = $(".container-chat__main-right-chat.active");
     container.animate({ scrollTop: container.get(0).scrollHeight }, 200);
   }
   ///*** funzione per aprire menu emojy **///////
@@ -99,7 +103,20 @@ $(document).ready(function () {
       "container-chat__main-right-chat-input-focus"
     );
   });
-  ///funzione per Contatto e chat attiva ////
+  // function search bar
+  function searchValue(val){
+    var contact = $(".container-chat__main-left-contacts__item");
+    var nome = contact.find(".contanct-item-name");
+    $(nome).each(function () {
+      // se la stringa non include la partola nascondi caso contrario mostra
+      if (!($(this).text().toLowerCase()).includes(val)) {
+        $(this).closest(contact).hide();
+      }else{
+        $(this).closest(contact).show();
+      }
+    });
+  };
+  //funzione per Contatto e chat attiva ////
   $(".container-chat__main-left-contacts__item").click(function () {
     var headername = $(".contanct-item-name-header");
     var headerInfo = $(".container-chat__header-right-info-text");
@@ -113,12 +130,13 @@ $(document).ready(function () {
     headername.text(contactNameSide);
     headerInfo.addClass("active-head-Info");
   });
+
   //set random Time
   function setRandomtime() {
     contenitori = $(".contanct-item-timing");
     var orerandom = [];
     for (var i = 0; i < contenitori.length; i++) {
-      var orarioRandom = oraRandom() + ":" + minutiRandom();
+      var orarioRandom = oraRandom();
       if (!orerandom.includes(orarioRandom)) {
         orerandom.push(orarioRandom);
         $(contenitori[i]).text(orerandom[i]);
@@ -136,38 +154,20 @@ function numeroRandom(min, max) {
 }
 //****funzione per avere l'ora *****/////
 function orario() {
-  var dt = new Date();
-  var time = ore() + ":" + minuti();
+  var date = new Date();
+  var time =
+    aggiungiZero(date.getHours()) + ":" + aggiungiZero(date.getMinutes());
   return time;
-}
-// funzione minuti
-function minuti() {
-  var dt = new Date();
-  minutes = dt.getMinutes();
-  if (minutes < 10) {
-    minutes = "0" + minutes;
-  }
-  return minutes;
-}
-//funzione ora
-function ore() {
-  var dt = new Date();
-  var hours = dt.getHours();
-  if (hours < 10) {
-    hours = "0" + dt.getHours();
-    console.log(hours);
-  }
-  return hours;
 }
 // funzione ora casuale
 function oraRandom() {
-  var oraRandom = numeroRandom(00, 23);
-  oraRandom < 10 ? (oraRandom = "0" + oraRandom) : oraRandom;
+  var oraRandom =
+    aggiungiZero(numeroRandom(0, 23)) + ":" + aggiungiZero(numeroRandom(0, 60));
   return oraRandom;
 }
-// funzione minuti Random
-function minutiRandom() {
-  var minutiRandom = numeroRandom(00, 23);
-  minutiRandom < 10 ? (minutiRandom = "0" + minutiRandom) : minutiRandom;
-  return minutiRandom;
+function aggiungiZero(oraMinuti) {
+  if (oraMinuti < 10) {
+    return "0" + oraMinuti;
+  }
+  return oraMinuti;
 }
