@@ -29,9 +29,7 @@ html {
   --dark: #263238;
   --dark-rgb: 38, 50, 56;
   --gray-30: #f7f7f7;
-  --gray-30-rgb: 247, 247, 247;
   --gray-60: #f0f0f0;
-  --gray-60-rgb: 240, 240, 240;
   --gray-70: #ededed;
   --gray-70-rgb: 237, 237, 237;
   --gray-100: #e6e6e6;
@@ -93,7 +91,6 @@ html {
 .container-chat {
   display: flex;
   flex-direction: column;
-  background-color: gray;
   width: 1396px;
   flex: 1 1;
   box-shadow: 0 1px 1px 0 rgba(var(--shadow-rgb), 0.06),
@@ -242,7 +239,6 @@ img {
 }
 .container-chat__main-right-chat-input-focus{
   background-color: #fff;
-  border-bottom:1px solid var(--gray-60) ;
 }
 .emojy-menu-list{
   display:none;
@@ -337,7 +333,7 @@ input {
 .container-chat__main-right-chat {
   overflow-y: scroll;
   background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
-  background-size: contain;
+  background-size:contain;
   width: 100%;
   flex: 0 1 calc(100vh - 220px);
   display: none;
