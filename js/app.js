@@ -2,7 +2,7 @@ $(document).ready(function () {
   //****Richiamo fuzioni inzio app ****/
   $("input.chat-input").keydown(chatBot);
   $("#send").click(chatBot);
-  // ricerca contatto
+  // barra ricerca 
   $("#search-contacts").keyup(function () {
     searchValue($(this).val().toLowerCase().trim());
   });
@@ -108,8 +108,9 @@ $(document).ready(function () {
     var contact = $(".container-chat__main-left-contacts__item");
     var nome = contact.find(".contanct-item-name");
     $(nome).each(function () {
+      var nomeUser = $(this).text().toLowerCase();
       // se la stringa non include la partola nascondi caso contrario mostra
-      if (!($(this).text().toLowerCase()).includes(val)) {
+      if (!nomeUser.includes(val)) {
         $(this).closest(contact).hide();
       }else{
         $(this).closest(contact).show();
