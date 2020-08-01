@@ -6,8 +6,10 @@ $(document).ready(function () {
   $("#search-contacts").keyup(function () {
     searchValue($(this).val().toLowerCase().trim());
   });
+  
   setRandomtime();
   RandomPreview();
+  conversazioneDefault();
   //*********chatbot************//
   function chatBot() {
     var time = orario();
@@ -68,7 +70,7 @@ $(document).ready(function () {
     lastSeen.text(time);
     scrollBottom();
   }
-
+  // CONVERSAZIONE AUTOMATICA AL'APERTURA DELLA CHAT ATTIVA
   function conversazioneDefault(){
    $('.contact-message').first().remove();
    var containerPrev =  $('.container-chat__main-left-contacts__item.active');
@@ -76,7 +78,7 @@ $(document).ready(function () {
    var messageContent = $('.template .message-box').clone();
    messageContent.addClass('contact-message');
    messageContent.find('.time').text('today');
-   messageContent.find(".contact-message-text-content").append(messagePrev);
+   messageContent.find(".contact-message-text-content").prepend(messagePrev);
    messageContent.find(".time-message").addClass("text-left");
    $(".container-chat__main-right-chat.active").prepend(messageContent);
   }
