@@ -47,7 +47,7 @@ $(document).ready(function () {
   function changeOrder (){
     contattoAttivo = $('.container-chat__main-left-contacts__item.active');
     $('.container-chat__main-left-contacts').prepend(contattoAttivo);
-  }
+  };
   //*****funzione rispostarandom*********/
   function randomAnswere() {
     var lastSeen = $(".container-chat__main-left-contacts__item.active").find(
@@ -81,7 +81,7 @@ $(document).ready(function () {
     //aggiornamentto del chat preview con l'ultimo messassaggio rivevuto chat attiva
     $('.container-chat__main-left-contacts__item.active').find('.contanct-item-preview').text(risposta.split(' ').shift()+'...');
     changeOrder();
-  }
+  };
   // CONVERSAZIONE AUTOMATICA ALL'APERTURA DELLA CHAT ATTIVA
   function conversazioneDefault(){
     var containerPrev =  $('.container-chat__main-left-contacts__item');
@@ -99,7 +99,7 @@ $(document).ready(function () {
   function scrollBottom() {
     var container = $(".container-chat__main-right-chat.active");
     container.animate({ scrollTop: container.get(0).scrollHeight }, 200);
-  }
+  };
   ///*** funzione per aprire menu emojy **///////
   $(".smile").click(function () {
     $(".emojy-menu-list").toggleClass("emojy-active");
@@ -173,7 +173,7 @@ $(document).ready(function () {
         i--;
       }
     }
-  }
+  };
   // set RandomMessage
   function RandomPreview(){
     var containerPrev =  $('.contanct-item-preview');
@@ -193,23 +193,23 @@ $(document).ready(function () {
 /// numero random
 function numeroRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
-}
+};
 //****funzione per avere l'ora *****/////
 function orario() {
   var date = new Date();
   var time =
     aggiungiZero(date.getHours()) + ":" + aggiungiZero(date.getMinutes());
   return time;
-}
+};
 // funzione ora casuale
 function oraRandom() {
   var oraRandom =
     aggiungiZero(numeroRandom(0, 23)) + ":" + aggiungiZero(numeroRandom(0, 60));
   return oraRandom;
-}
+};
 function aggiungiZero(oraMinuti) {
   if (oraMinuti < 10) {
     return "0" + oraMinuti;
   }
   return oraMinuti;
-}
+};
