@@ -37,8 +37,15 @@ $(document).ready(function () {
         scrollBottom();
         // prima parola chat come preview 
         $('.container-chat__main-left-contacts__item.active').find('.contanct-item-preview').text(messaggioUser.split(' ').shift()+'...');
+        // l'ordine della chat cambia a seconda della chat in cui e stato inviato l'ultimo messaggio
+        changeOrder();
       }
     }
+  };
+  // cambiare l'ordine dei contatti a seconda di quale e stata l'ultima conversazione attiva
+  function changeOrder (){
+    contattoAttivo = $('.container-chat__main-left-contacts__item.active');
+    $('.container-chat__main-left-contacts').prepend(contattoAttivo);
   }
   //*****funzione rispostarandom*********/
   function randomAnswere() {
@@ -72,6 +79,7 @@ $(document).ready(function () {
     scrollBottom();
     //aggiornamentto del chat preview con l'ultimo messassaggio rivevuto chat attiva
     $('.container-chat__main-left-contacts__item.active').find('.contanct-item-preview').text(risposta.split(' ').shift()+'...');
+    changeOrder();
   }
   // CONVERSAZIONE AUTOMATICA ALL'APERTURA DELLA CHAT ATTIVA
   function conversazioneDefault(){
