@@ -69,18 +69,20 @@ $(document).ready(function () {
     lastSeen.text(time);
     scrollBottom();
   }
-  // CONVERSAZIONE AUTOMATICA AL'APERTURA DELLA CHAT ATTIVA
+  // CONVERSAZIONE AUTOMATICA ALL'APERTURA DELLA CHAT ATTIVA
   function conversazioneDefault(){
-   $('.contact-message').first().remove();
-   var containerPrev =  $('.container-chat__main-left-contacts__item.active');
-   var messagePrev = containerPrev.find('.contanct-item-preview').text();
-   var messageContent = $('.template .message-box').clone();
-   messageContent.addClass('contact-message');
-   messageContent.find('.time').text('today');
-   messageContent.find(".contact-message-text-content").prepend(messagePrev);
-   messageContent.find(".time-message").addClass("text-left");
-   $(".container-chat__main-right-chat.active").prepend(messageContent);
+    var containerPrev =  $('.container-chat__main-left-contacts__item');
+  for(var i=0;i<containerPrev.length;i++){
+    var messagePrev = containerPrev.find('.contanct-item-preview').eq(i).text();
+    console.log(messagePrev);
+    var messageContent = $('.template .message-box').clone();
+    messageContent.addClass('contact-message');
+    messageContent.find('.time').text('today');
+    messageContent.find(".contact-message-text-content").prepend(messagePrev);
+    messageContent.find(".time-message").addClass("text-left");
+    $(".container-chat__main-right-chat").eq(i).prepend(messageContent);
   }
+};
   //*** funzione scroll automantico all'invio o ricezione di un messaggio **/////////
   function scrollBottom() {
     var container = $(".container-chat__main-right-chat.active");
@@ -144,7 +146,6 @@ $(document).ready(function () {
     $("img.contact-img").attr("src", changeImg);
     headername.text(contactNameSide);
     headerInfo.addClass("active-head-Info");
-    conversazioneDefault();
   });
 
   //set random Time
