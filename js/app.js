@@ -42,6 +42,7 @@ $(document).ready(function () {
       }
     }
   };
+  // bonus ////
   // cambiare l'ordine dei contatti a seconda di quale e stata l'ultima conversazione attiva
   function changeOrder (){
     contattoAttivo = $('.container-chat__main-left-contacts__item.active');
