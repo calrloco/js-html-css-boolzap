@@ -35,6 +35,7 @@ $(document).ready(function () {
         lastSeen.text(time);
         $("input.chat-input").val("");
         scrollBottom();
+        // prima parola chat come preview 
         $('.container-chat__main-left-contacts__item.active').find('.contanct-item-preview').text(messaggioUser.split(' ').shift()+'...');
       }
     }
