@@ -74,7 +74,6 @@ $(document).ready(function () {
     var containerPrev =  $('.container-chat__main-left-contacts__item');
   for(var i=0;i<containerPrev.length;i++){
     var messagePrev = containerPrev.find('.contanct-item-preview').eq(i).text();
-    console.log(messagePrev);
     var messageContent = $('.template .message-box').clone();
     messageContent.addClass('contact-message');
     messageContent.find('.time').text('today');
