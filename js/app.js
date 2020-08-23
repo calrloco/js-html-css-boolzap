@@ -35,6 +35,7 @@ $(document).ready(function () {
         lastSeen.text(time);
         $("input.chat-input").val("");
         scrollBottom();
+        $('.container-chat__main-left-contacts__item.active').find('.contanct-item-preview').text(messaggioUser.split(' ').shift()+'...');
       }
     }
   }
@@ -68,6 +69,8 @@ $(document).ready(function () {
     );
     lastSeen.text(time);
     scrollBottom();
+    //aggiornamentto del chat preview con l'ultimo messassaggio rivevuto chat attiva
+    $('.container-chat__main-left-contacts__item.active').find('.contanct-item-preview').text(risposta.split(' ').shift()+'...');
   }
   // CONVERSAZIONE AUTOMATICA ALL'APERTURA DELLA CHAT ATTIVA
   function conversazioneDefault(){
