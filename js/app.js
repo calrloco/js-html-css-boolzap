@@ -82,7 +82,7 @@ $(document).ready(function () {
     $('.container-chat__main-left-contacts__item.active').find('.contanct-item-preview').text(risposta.split(' ').shift()+'...');
     changeOrder();
   };
-  // CONVERSAZIONE AUTOMATICA ALL'APERTURA DELLA CHAT ATTIVA
+  // CONVERSAZIONE si default all'avvio della app
   function conversazioneDefault(){
     var containerPrev =  $('.container-chat__main-left-contacts__item');
   for(var i=0;i<containerPrev.length;i++){
