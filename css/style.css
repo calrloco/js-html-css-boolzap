@@ -58,8 +58,6 @@ html {
   --green-rgb: 7, 188, 76;
   --green-deep: #009688;
   --green-deep-rgb: 27, 154, 89;
-  --orange: #ffad20;
-  --orange-rgb: 255, 173, 32;
   --pale-blue-green: #ecfaf5;
   --pale-blue-green-rgb: 236, 250, 245;
   --gray-text-dark: #919191;
@@ -105,6 +103,7 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.6rem;
+  min-height: 5.8rem;
 }
 .heder-right {
   border-left: 1.5px solid rgb(221, 221, 221);

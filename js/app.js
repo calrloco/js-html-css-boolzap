@@ -6,7 +6,6 @@ $(document).ready(function () {
   $("#search-contacts").keyup(function () {
     searchValue($(this).val().toLowerCase().trim());
   });
-  
   setRandomtime();
   RandomPreview();
   conversazioneDefault();
@@ -32,7 +31,7 @@ $(document).ready(function () {
         // mentre il messaggio viene scritto appare la scritta typing dove c'e l'accesso...
         $(".container-chat__header-right-info-text").text("typing...");
         // richiamo funzione di risposta con un tempo fra 1 secondo e 4 secondi
-        setTimeout(randomAnswere, numeroRandom(2000, 4000));
+        setTimeout(randomAnswere, numeroRandom(1000, 2000));
         lastSeen.text(time);
         $("input.chat-input").val("");
         scrollBottom();
@@ -136,7 +135,7 @@ $(document).ready(function () {
     var headerInfo = $(".container-chat__header-right-info-text");
     var contactNameSide = $(this).find(".contanct-item-name").text();
     var chatContainer = $(".container-chat__main-right-chat");
-    randmTimeToHeader = $(".contanct-item-timing").eq($(this).index()).text();
+    var randmTimeToHeader = $(".contanct-item-timing").eq($(this).index()).text();
     headerInfo.text("Ultimo Accesso oggi " + randmTimeToHeader)
     $(".active").removeClass("active");
     $(this).addClass("active");
