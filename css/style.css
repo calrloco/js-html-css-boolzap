@@ -341,6 +341,14 @@ input {
   font-size: 1.4rem;
   min-height: 60px;
 }
+.container-chats{
+  width: 100%;
+  flex: 0 1 calc(100vh - 220px);
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  min-height: 60px;
+}
 .message-box {
   padding: 6px 7px 8px 9px;
   border-radius: 0.7rem;
