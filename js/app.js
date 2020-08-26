@@ -38,16 +38,17 @@ $(document).ready(function () {
         // prima parola chat come preview 
         $('.container-chat__main-left-contacts__item.active').find('.contanct-item-preview').text(messaggioUser.split(' ').shift()+'...');
         // l'ordine della chat cambia a seconda della chat in cui e stato inviato l'ultimo messaggio
-        changeOrder();
+        // changeOrder();
       }
     }
   };
   // bonus ////
+  // da modificare
   // cambiare l'ordine dei contatti a seconda di quale e stata l'ultima conversazione attiva
-  function changeOrder (){
+  /*function changeOrder (){
     contattoAttivo = $('.container-chat__main-left-contacts__item.active');
     $('.container-chat__main-left-contacts').prepend(contattoAttivo);
-  };
+  };*/
   //*****funzione rispostarandom*********/
   function randomAnswere() {
     var lastSeen = $(".container-chat__main-left-contacts__item.active").find(
@@ -80,7 +81,7 @@ $(document).ready(function () {
     scrollBottom();
     //aggiornamentto del chat preview con l'ultimo messassaggio rivevuto chat attiva
     $('.container-chat__main-left-contacts__item.active').find('.contanct-item-preview').text(risposta.split(' ').shift()+'...');
-    changeOrder();
+    //changeOrder();
   };
   // CONVERSAZIONE si default all'avvio della app
   function conversazioneDefault(){
@@ -150,7 +151,7 @@ $(document).ready(function () {
     var contactNameSide = $(this).find(".contanct-item-name").text();
     var chatContainer = $(".container-chat__main-right-chat");
     var randmTimeToHeader = $(".contanct-item-timing").eq($(this).index()).text();
-    headerInfo.text("Ultimo Accesso oggi " + randmTimeToHeader)
+    headerInfo.text("Ultimo Accesso oggi " + randmTimeToHeader);
     $(".active").removeClass("active");
     $(this).addClass("active");
     chatContainer.eq($(this).index()).addClass("active");
